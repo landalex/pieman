@@ -22,7 +22,7 @@ alpine-3.8-armhf:
   base: tzdata
   includes:
   - dropbear
-  - wireless_tools
+  - wireless-tools
   - wpa_supplicant
   kernel:
     package: linux-rpi
