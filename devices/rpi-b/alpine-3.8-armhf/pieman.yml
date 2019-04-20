@@ -21,7 +21,7 @@ alpine-3.8-armhf:
   - https://github.com/raspberrypi/firmware/raw/master/boot/start_x.elf
   base: tzdata
   includes:
-  - dropbear
+  - openssh-server
   - wireless-tools
   - wpa_supplicant
   kernel:

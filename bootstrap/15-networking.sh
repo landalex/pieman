@@ -76,9 +76,8 @@ if is_alpine; then
     # the scripts from /etc/local.d raises the network interface.
     sed -i '/^\tneed/ s/$/ local/' "${ETC}/init.d/networking"
 
-    if [ -x "$(command -v dropbear)" ]; then
-        rc-service dropbear start
-        rc-update add dropbear
+    if [ -x "$(command -v sshd)" ]; then
+        rc-update add sshd default
     fi
 
     if [ -x "$(command -v wpa-supplicant)" ]; then
