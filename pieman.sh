@@ -92,6 +92,10 @@ def_var USER_NAME "cusdeb"
 
 def_protected_var USER_PASSWORD "secret"
 
+def_var WIFI_SSID "wifi-ssid"
+
+def_protected_var WIFI_PASSPHRASE "wifi-passphrase"
+
 #
 # Internal params
 #

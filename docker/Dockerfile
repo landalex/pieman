@@ -1,6 +1,6 @@
 FROM alpine:3.7
 
-ENV BRANCH master
+ENV BRANCH alpine3.8-rpi-zero
 
 ENV DEBOOTSTRAP_VER 1.0.105
 
@@ -42,7 +42,7 @@ RUN touch .dockerenv \
  && /usr/bin/rollout_fixes.sh \
  && rm -r qemu-user-static \
  && cd \
- && git clone -b $BRANCH --depth 1 https://github.com/tolstoyevsky/pieman.git \
+ && git clone -b $BRANCH --depth 1 https://github.com/landalex/pieman.git \
  && cd pieman \
  && git clone https://anonscm.debian.org/git/d-i/debootstrap.git \
  && cd debootstrap && git checkout $DEBOOTSTRAP_VER && cd .. \

@@ -75,4 +75,14 @@ if is_alpine; then
     # The networking service should depend on the local service since one of
     # the scripts from /etc/local.d raises the network interface.
     sed -i '/^\tneed/ s/$/ local/' "${ETC}/init.d/networking"
+
+    if [ -x "$(command -v dropbear)" ]; then
+        rc-service dropbear start
+        rc-update add dropbear
+    fi
+
+    if [ -x "$(command -v wpa-supplicant)" ]; then
+        wpa-passphrase '${WIFI_SSID}' '${WIFI_PASSPHRASE}' > ${ETC}/wpa_supplicant/wpa_supplicant.conf
+        rc-update add wpa_supplicant boot
+    fi
 fi
